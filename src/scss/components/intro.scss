@@ -1,0 +1,42 @@
+.intro {
+  position: relative;
+  &__bg {
+  }
+  &__container {
+    min-height: 100vh;
+    padding-top: 290rem;
+    padding-bottom: 150rem;
+    flex-direction: column;
+  }
+  &__content {
+    max-width: 1002rem;
+    margin: 0 0 0 73rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    background: url(../images/title-appeal.svg) center top / contain no-repeat;
+    margin: 0;
+    padding: 0 0 16.6666666667%;
+  }
+  &__suptitle {
+    max-width: 640rem;
+    margin: 0 0 48rem;
+    font-weight: normal;
+    font-family: $fontCourierNew;
+    font-size: var(--fs-3);
+    line-height: $lineHeightXs;
+    color: $whiteColor;
+    letter-spacing: .515em;
+    text-transform: uppercase;
+    order: -1;
+  }
+  &__form-appeal {
+    width: 100%;
+    max-width: 740rem;
+    margin: 0 0 0 auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

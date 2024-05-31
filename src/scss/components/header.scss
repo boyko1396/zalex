@@ -1,0 +1,314 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  &__container {
+  }
+  &__aside {
+    margin-right: 26rem;
+    padding-top: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+  &__logo {
+    width: 66rem;
+    height: 56rem;
+    display: block;
+    position: relative;
+    transition: $transition;
+    z-index: 9;
+    &:hover {
+      text-decoration: none;
+      @media (min-width: $lg-mf) {
+        opacity: .6;
+      }
+    }
+    .u-icon {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  &__agency {
+    width: 120rem;
+    font-size: 12rem;
+    letter-spacing: .695em;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    opacity: .5;
+    white-space: nowrap;
+    &-wrapper {
+      margin: 450rem 0 0;
+    }
+  }
+  &__social {
+    &:before {
+      background: rgba($beigeColor, .25);
+      width: 1rem;
+      height: 120rem;
+      margin: 82rem auto 30rem;
+      content: '';
+      display: block;
+    }
+  }
+  &__inner {
+    padding: 30rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba($beigeColor, .25);
+    position: relative;
+  }
+  &__dropdown {
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: $transition;
+    transition-property: transform, opacity, visibility;
+    z-index: 8;
+    &:not(.is-show) {
+      transform: translateY(-100%);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &-bg {
+      @extend %img-cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    &-close {
+      @extend %area-click, %btn-reset;
+      color: $whiteColor;
+      position: absolute;
+      top: 56rem;
+      right: 60rem;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        @media (min-width: $lg-mf) {
+          transform: rotate(180deg);
+          opacity: .6;
+        }
+      }
+      .u-icon {
+        width: 24rem;
+        height: 24rem;
+        display: block;
+      }
+    }
+    &-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__footer {
+    background: $lightBlueGrayColor;
+    margin-top: auto;
+    padding: 0 60rem;
+    color: $blackColor;
+    &-top {
+      padding: 46rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-logo {
+      margin-right: 52rem;
+      flex-shrink: 0;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        @media (min-width: $lg-mf) {
+          opacity: .6;
+        }
+      }
+      .u-icon {
+        width: 86rem;
+        height: 74rem;
+      }
+    }
+    &-agency {
+      margin: 0 auto 0 0;
+      font-weight: 300;
+      font-size: 24rem;
+      text-transform: uppercase;
+      letter-spacing: .56em;
+    }
+    &-btn-arrow {
+      margin-left: auto;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        @media (min-width: $lg-mf) {
+          opacity: .6;
+        }
+      }
+      .u-icon {
+        width: 250rem;
+        height: 22rem;
+        display: block;
+      }
+    }
+    &-contacts {
+      padding: 40rem 0 60rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba($blackColor, .15);
+      &-item {
+      }
+    }
+  }
+  &__nav {
+    flex-grow: 1;
+    &-list {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style-type: none;
+    }
+    &-item {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      &:not(:first-child) {
+        &:after {
+          background: $whiteColor;
+          background: linear-gradient(0deg, rgba($whiteColor, 0) 0%, rgba($whiteColor, 1) 50%, rgba($whiteColor, 0) 100%);
+          width: 2px;
+          height: 100%;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: scaleY(.33);
+          transition: $transition;
+        }
+      }
+      &:hover,
+      &:hover + li {
+        @media (min-width: $lg-mf) {
+          &:after {
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+    &-link {
+      height: 100%;
+      padding: 80rem 10rem 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: 300;
+      font-size: 30rem;
+      text-align: center;
+      text-transform: uppercase;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        @media (min-width: $lg-mf) {
+          background: rgba($blackColor, .15);
+        }
+        .u-icon {
+          @media (min-width: $lg-mf) {
+            color: currentColor;
+          }
+        }
+      }
+      .u-icon {
+        width: 136rem;
+        height: 22rem;
+        margin-top: 58rem;
+        display: block;
+        color: transparent;
+        transition: all .4s;
+      }
+    }
+  }
+  &__toggle {
+    @extend %area-click, %btn-reset;
+    width: 30rem;
+    height: 30rem;
+    flex-shrink: 0;
+    color: $whiteColor;
+    cursor: pointer;
+    position: relative;
+    transition: $transition;
+    &:hover {
+      @media (min-width: $lg-mf) {
+        color: $beigeColor;
+      }
+    }
+    span {
+      background: currentColor;
+      height: 2rem;
+      margin: -1rem 0 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transition: $transition;
+      transition-property: opacity, visibility, transform;
+      &:nth-child(1) {
+        width: 25rem;
+        transform: translateY(-8rem);
+      }
+      &:nth-child(2) {
+        width: 13rem;
+      }
+      &:nth-child(3) {
+        width: 100%;
+        transform: translateY(8rem);
+      }
+    }
+    &.is-active {
+      span {
+        &:nth-child(1) {
+        }
+        &:nth-child(2) {
+        }
+        &:nth-child(3) {
+        }
+      }
+    }
+  }
+  &__phone {
+    margin: 0 0 0 126rem;
+  }
+  &__call {
+    margin-left: auto;
+    font-weight: bold;
+    color: $lightBlueGrayColor;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: $transition;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__call-btn {
+    margin: 0 52rem 0 46rem;
+    flex-shrink: 0;
+  }
+}
